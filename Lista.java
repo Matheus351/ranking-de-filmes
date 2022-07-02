@@ -77,29 +77,20 @@ public class Lista{
          }
         }
       }
+     
+    
+      public Filme procurarFilme(String nome){
 
-     public void procurarFilme(String nome,String acao){
-
-         boolean achou = false;
          for(int k=0;k<listaFilmes.size();k++){
            
            if(this.getLista().get(k).getNome().equalsIgnoreCase(nome)){
-             achou = true;
-             if(acao.equals("mudarNota")){
-                 listaFilmes.get(k).mudarNota();
-             }
-
-             else{
-               listaFilmes.get(k).mudarDescricao();
-             }
-           
+            
+             return this.getLista().get(k);
+             
            }
            
          }
-         if(achou==false){
-           System.out.println("Filme não encontrado");
-         }
-     
+         return null;
      }
 }
 
