@@ -32,7 +32,7 @@ public class Main{
              ler.nextLine();  
              String genero = ler.nextLine();
              Filme filme = new Filme(titulo,n,descr,genero);
-             //objetoLista.inserirFilme();
+        
               objetoLista.setLista(filme);
            System.out.println("Filme de "+genero+ " inserido");
           break;
@@ -43,7 +43,12 @@ public class Main{
           String nomeDoFilme = ler.nextLine();
 
          
-           objetoLista.procurarFilme(nomeDoFilme,"mudarNota");
+          Filme f = objetoLista.procurarFilme(nomeDoFilme);//filme encontrado
+           if(f!=null){
+             f.mudarNota();
+           }else{
+              System.out.println("Filme não encontrado");
+           }
            
            
            break;
@@ -68,7 +73,13 @@ public class Main{
                       ler.nextLine();
                       nomeDoFilme = ler.nextLine();
                   
-                      objetoLista.procurarFilme(nomeDoFilme,"mudarDescricao");
+                      f = objetoLista.procurarFilme(nomeDoFilme);
+                     
+                      if(f!=null){
+                         f.mudarDescricao();
+                      }else{
+                          System.out.println("Filme não encontrado");
+                      }
            
            break;
                case 0:
