@@ -83,7 +83,12 @@ public class Lista  implements InterfaceExibir{
 
 
       
-
+     public void inserirFilme(String nome, int nota, String descricao, String genero){
+         
+         Filme novoFilme = new Filme(nome,nota,descricao,genero);
+         this.setLista(novoFilme);
+         
+     }
      
      
     
