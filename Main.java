@@ -31,9 +31,9 @@ public class Main{
              System.out.println("Qual o genero?:");
              ler.nextLine();  
              String genero = ler.nextLine();
-             Filme filme = new Filme(titulo,n,descr,genero);
-        
-              objetoLista.setLista(filme);
+           
+             objetoLista.inserirFilme(titulo,n,descr,genero);
+               
            System.out.println("Filme de "+genero+ " inserido");
           break;
            case 2:
