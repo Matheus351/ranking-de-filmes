@@ -13,7 +13,7 @@ import java.util.Collections;
  *
  * @author Matheus
  */
-public class Lista{
+public class Lista  implements InterfaceExibir{
     
     private ArrayList<Filme> listaFilmes = new ArrayList<>();
 
@@ -30,9 +30,9 @@ public class Lista{
     
       Scanner ler = new Scanner( System.in );
       
-      
-      public void mostrarFilmes(){
-         Collections.sort(listaFilmes);
+    @Override
+    public void mostrarFilmes() {
+       Collections.sort(listaFilmes);
          System.out.println("Em ranking:");
         for(int k=0;k<listaFilmes.size();k++){
          System.out.println("--------"); 
@@ -42,11 +42,12 @@ public class Lista{
          System.out.println("Gênero: "+listaFilmes.get(k).getGenero());
          System.out.println("--------");
         }
-      }
-
-
-      public void mostrarFilmesAcao(){
+    }
     
+    
+
+    @Override
+    public void mostrarFilmesAcao() {
         Collections.sort(listaFilmes);
          System.out.println("Em ranking:");
         for(int k=0;k<listaFilmes.size();k++){
@@ -59,12 +60,13 @@ public class Lista{
          System.out.println("--------");
          }
         }
-      }
-
-     
-      public void mostrarFilmesAventura(){
+    }
     
-        Collections.sort(listaFilmes);
+    
+
+    @Override
+    public void mostrarFilmesAventura() {
+     Collections.sort(listaFilmes);
          System.out.println("Em ranking:");
         for(int k=0;k<listaFilmes.size();k++){
          if(listaFilmes.get(k).getGenero().equalsIgnoreCase("aventura")){
@@ -76,7 +78,13 @@ public class Lista{
          System.out.println("--------");
          }
         }
-      }
+    }
+    
+
+
+      
+
+     
      
     
       public Filme procurarFilme(String nome){
